@@ -7,6 +7,9 @@
 
     <!-- 폰트어썸 -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+     <!-- 제이쿼리 -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="top_bar con_min_width">
@@ -265,10 +268,15 @@
             </div>
 
             <div class="dropdown flex-as-c">
-                <button class="dropBtn">
-                    <span>관련사이트</span>
-                    <span class="ico"><i class="fa-solid fa-angle-up"></i></span>
-                </button>
+                <button class="dropBtn">관련사이트</button>
+                <div class="dropdown_content">
+                    <ul>
+                        <li><a href="#">카카오뱅크 AD</a></li>
+                        <li><a href="#">카카오뱅크 인증서</a></li>
+                        <li><a href="#">금융기술연구소</a></li>
+                        <li><a href="#">기술블로그</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -396,6 +404,7 @@
             display: none;
             padding: 60px 0 36px 0;
             box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         .top_bar .menu_box > ul > li:nth-child(2) > div {
@@ -440,6 +449,10 @@
 
 
         /* 관련사이트 */
+        .top_bar .dropdown {
+            position: relative;
+        }
+
         .top_bar .dropdown .dropBtn {
             background: rgba(244, 244, 244, 0.8);
             color: rgba(68, 68, 68, 1);
@@ -452,16 +465,57 @@
             cursor: pointer;
         }
 
-        .top_bar .dropdown .dropBtn .ico {
+        .top_bar .dropdown .dropBtn::after {
+            content: "";
             display: inline-block;
-            margin-left: 5px;
+            margin-left: 10px;
+            width: 12px;
+            height: 12px;
+            background: url(/kakaoimage/svg_line_arrow_down.svg);
+            background-size: 12px 12px;
+        }
+        
+        .top_bar .dropdown .dropdown_content {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: #fff;            
+            border-radius: 6px;
+            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .1);;
+            overflow: hidden;
+            margin-top: 30px;
+            width: 240px;
+            visibility: hidden;
+            transform: translateY(4px);
+            transition: all .1s linear;
+            opacity: 0;
+        }
+
+        .top_bar .dropdown .dropdown_content a {
+            font-size: 13px;
+            padding: 0 24px;
+            display: block;
+            line-height: 48px;
+        }
+
+        .top_bar .dropdown .dropdown_content a:hover {
+            text-decoration: underline;
+        }
+
+        .top_bar .dropdown .is-active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
         }
 
         /* 탑바 끝 */
     </style>
 
     <script>
-
+        $('.dropBtn').click(function(){
+            var dropdownContent = $('.dropdown_content');
+            dropdownContent.toggleClass("is-active");
+        })
     </script>
 </body>
 </html>
