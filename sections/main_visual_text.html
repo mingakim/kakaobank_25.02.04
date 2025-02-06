@@ -13,10 +13,16 @@
             <p class="tit_sub">보내고, 받고, 모으고, 쓰는<br>당신의 모든 일이 바뀌고 있습니다.</p>
             <ul class="btns flex">
                 <li>
-                    <a href="#">Goole Play</a>
+                    <a href="#">
+                        <span class="ico ico-1"></span>
+                        <span>Goole Play</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">Apple Store</a>
+                    <a href="#">
+                        <span class="ico ico-2"></span>
+                        <span>Apple Store</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -100,6 +106,14 @@
             width: 1080px;
         }
 
+        .ico {
+        background-color: white;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        background-image: url(https://kakaobank.com/static/images/web/img_kabang_220615.png);
+        }
+
         /* 메인 visual 시작 */
         .main_visual {    
             background-color: #ffef6b;
@@ -128,7 +142,7 @@
         }
     
         .main_visual .text-box .btns > li > a {
-            display: block;
+            display: inline-flex;
             width: 178px;
             height: 56px;
             border: 1px solid rgba(255, 255, 255, .3);
@@ -138,7 +152,21 @@
             line-height: 56px;
             color: #333;
             background-color: #fff;
-            text-align: center;
+            justify-content: center;           
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main_visual .text-box .btns > li:hover > a {
+            text-decoration: underline;
+        }
+
+        .main_visual .text-box .btns .ico-1 {
+            background-position: -341px -292px;
+        }
+
+        .main_visual .text-box .btns .ico-2 {
+            background-position: -371px -292px;
         }
     </style>   
 </body>
