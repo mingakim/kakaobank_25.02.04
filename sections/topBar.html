@@ -396,7 +396,7 @@
             border-bottom: 2px solid black;
         }
 
-        .top_bar .menu_box > ul > li > a:hover {
+        .top_bar .menu_box ul > li > a:hover {
             text-decoration: underline;
         }     
 
@@ -568,7 +568,14 @@
         $('.dropBtn').click(function() {            
             $('.dropdown_content').toggleClass('is-active');
             $(this).toggleClass('rotate');
-        })
+        });
+
+        $(window).click(function(event){
+            if ( !$(event.target).closest(".dropBtn").length ) {
+                $('.dropdown_content').removeClass('is-active');
+                $('.dropBtn').removeClass('rotate');
+            }            
+        });
     </script>
 </body>
 </html>
