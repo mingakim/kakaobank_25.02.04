@@ -16,7 +16,10 @@
     <div class="con_min_width loan-box active-on-visible can-active-once" data-active-on-visible-diff-y="-300" data-active-on-visible-delay="1000">
         <div class="sky">
             <div class="blue"></div>
-            <div class="moon"></div>
+            <div class="moon">
+                <div class="base"></div>
+                <div class="shadow"></div>
+            </div>
             <div class="stars"></div>
         </div>
         <div class="con"></div>
@@ -144,6 +147,43 @@
 
         .loan-box.active .sky .blue {
             height: 0;
+        }
+
+        .loan-box .sky .moon {
+            width: 112px;
+            height: 112px;
+            position: absolute;
+            top: 170px;
+            right: 120px;
+            overflow: hidden;
+        }
+
+        .loan-box .sky .moon .base {
+            width: 110px;
+            height: 110px;
+            background-color: #ffdc00;
+            border-radius: 50%;
+            transition: background-color .85s;
+        }
+
+        .loan-box.active .sky .moon .base {
+            background-color: white;
+        }
+
+        .loan-box .sky .moon .shadow {
+            width: 100%;
+            height: 100%;
+            background-color: #333b58;
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            border-radius: 50%;
+            transition: top .85s .2s, left .85s .2s;
+        }
+        
+        .loan-box.active .sky .moon .shadow {
+            top: -23%;
+            left: -23%;
         }
         /* 대출박스 끝 */
 
