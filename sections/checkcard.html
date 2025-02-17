@@ -17,6 +17,19 @@
             <div class="btn-box">
                 <a href="#">카카오뱅크 프렌즈 체크카드</a>
             </div>
+
+            <div class="slider_box">
+                <div class="arrows">
+                    <div><img src="../kakaoimage/img-left.png" alt=""></div>
+                    <div><img src="../kakaoimage/img-right.png" alt=""></div>
+                </div>
+
+                <div class="slides">
+                    <div><img src="../kakaoimage/card-1.png" alt=""></div>
+                    <div class="center"><img src="../kakaoimage/card-2.png" alt=""></div>
+                    <div><img src="../kakaoimage/card-3.png" alt=""></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -161,6 +174,49 @@
             background-size: 100%;
         }
 
+        .checkcard_box .slider_box  {
+            margin-top: 100px;
+            border: 1px solid red;
+            position: relative;
+        }
+
+        .checkcard_box .slider_box .slides {
+            display: flex;
+            justify-content: center;
+        }
+
+        .checkcard_box .slider_box .slides > div > img {
+            width: 240px;
+            display: block;
+        }
+
+        .checkcard_box .slider_box .slides > .center  {
+            border: 1px solid blue;
+            margin-left: -75px;
+            margin-right: -75px;
+            z-index: 1;
+        }
+
+        .checkcard_box .slider_box .slides > .center > img {
+            transform: scale(1.17);
+        }
+
+        .checkcard_box .slider_box .arrows > div {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;
+            cursor: pointer;
+        }
+
+        .checkcard_box .slider_box .arrows > div:last-child {
+            left: auto;
+            right: 30px;            
+        }
+    
+        .checkcard_box .slider_box .arrows div:active {
+            transform: translateY(-45%);
+        }
         /* 체크카드 끝 */
     </style>   
 </body>
