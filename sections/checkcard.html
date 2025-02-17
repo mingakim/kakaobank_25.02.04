@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- 슬릭 슬라이더 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 <body>
     <div class="con_min_width checkcard_box">
@@ -20,14 +27,26 @@
 
             <div class="slider_box">
                 <div class="arrows">
-                    <div><img src="../kakaoimage/img-left.png" alt=""></div>
-                    <div><img src="../kakaoimage/img-right.png" alt=""></div>
+                    <div class="btn_arrow_left"><img src="../kakaoimage/img-left.png" alt=""></div>
+                    <div class="btn_arrow_right"><img src="../kakaoimage/img-right.png" alt=""></div>
                 </div>
 
-                <div class="slides">
-                    <div><img src="../kakaoimage/card-1.png" alt=""></div>
-                    <div class="center"><img src="../kakaoimage/card-2.png" alt=""></div>
-                    <div><img src="../kakaoimage/card-3.png" alt=""></div>
+                <div class="slick">
+                    <div class="item">
+                        <div class="img-box"><img src="../kakaoimage/card-1.png" alt=""></div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box"><img src="../kakaoimage/card-2.png" alt=""></div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box"><img src="../kakaoimage/card-3.png" alt=""></div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box"><img src="../kakaoimage/card-4.png" alt=""></div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box"><img src="../kakaoimage/card-5.png" alt=""></div>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -174,30 +193,34 @@
             background-size: 100%;
         }
 
+        /* 슬라이드 시작 */
         .checkcard_box .slider_box  {
-            margin-top: 100px;
-            border: 1px solid red;
+            margin: 100px auto 0 auto;
             position: relative;
+            width: 660px;            
+        }    
+
+        .checkcard_box .slider_box .slick .item .img-box {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }    
+
+        .checkcard_box .slider_box .slick .slick-list {
+            left: 70px;
         }
 
-        .checkcard_box .slider_box .slides {
-            display: flex;
-            justify-content: center;
-        }
-
-        .checkcard_box .slider_box .slides > div > img {
-            width: 240px;
-            display: block;
-        }
-
-        .checkcard_box .slider_box .slides > .center  {
-            border: 1px solid blue;
-            margin-left: -75px;
-            margin-right: -75px;
+        .checkcard_box .slider_box .slick .item.slick-center .img-box {
+            position: relative;
+            left: -70px;
             z-index: 1;
         }
 
-        .checkcard_box .slider_box .slides > .center > img {
+        .checkcard_box .slider_box .slick .item.slick-center+.slick-active .img-box {
+            position: relative;
+            left: -140px;
+        }
+
+        .checkcard_box .slider_box .slick .item.slick-center img {
             transform: scale(1.17);
         }
 
@@ -205,19 +228,40 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 30px;
+            right: calc(100% + 100px);
             cursor: pointer;
+            z-index: 1;
         }
 
         .checkcard_box .slider_box .arrows > div:last-child {
-            left: auto;
-            right: 30px;            
+            left: calc(100% + 100px);           
         }
     
         .checkcard_box .slider_box .arrows div:active {
             transform: translateY(-45%);
         }
+
+        /* 슬라이드 끝 */
         /* 체크카드 끝 */
     </style>   
+
+    <script>
+        function SliderBox1__init() {
+            $('.slider_box > .slick').slick({
+                dots: false,
+                autoplay: false,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                centerMode:true,
+                centerPadding: 0,
+                arrows:true,
+                prevArrow: ".slider_box > .arrows > .btn_arrow_left",
+                nextArrow: ".slider_box > .arrows > .btn_arrow_right",
+            });
+            }
+
+            SliderBox1__init();
+        
+    </script>
 </body>
 </html>
