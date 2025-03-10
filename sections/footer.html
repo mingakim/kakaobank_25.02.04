@@ -9,7 +9,7 @@
     <footer class="con_min_width">
         <div class="con">
             <div class="box-1">
-                <div class="menu-box border-blue">
+                <div class="menu-box">
                     <ul>                   
                         <li class="not">
                             <a href="#">모바일뱅킹 서비스 이용약관</a>
@@ -18,13 +18,13 @@
                             <a href="#">전자금융거래 기본약관</a>
                         </li>
                         <li>
-                            <a href="#">위치기반 서비스 이용약관</a>
+                            <a href="#" class="strong black">위치기반 서비스 이용약관</a>
                         </li>
                         <li>
-                            <a href="#">개인정보처리방침</a>
+                            <a href="#" class="strong black">개인정보처리방침</a>
                         </li>
                         <li>
-                            <a href="#">전자민원접수</a>
+                            <a href="#" class="strong black">전자민원접수</a>
                         </li>
                         <li>
                             <a href="#">보호금융상품등록부</a>
@@ -46,11 +46,19 @@
                             <a href="#">카카오뱅크 인증서 서비스 이용약관</a>
                         </li>
                         <li>
-                            <a href="#">카카오뱅크 인증서 서비스 개인정보처리방침</a>
+                            <a href="#" class="strong black">카카오뱅크 인증서 서비스 개인정보처리방침</a>
                         </li>
                     </ul>
                 </div>
             </div>
+
+            <div class="box-2">
+                <span class="txt_busi">(주)카카오뱅크∙윤호영∙사업자번호 375-88-00197</span>
+                <span class="txt_busi_tel">대표전화 1599-3333</span>
+                <span class="txt_busi">(해외 +82-2-6420-3333)</span>
+                <div class="info_copyright">Copyright © KakaoBank Corp. All rights reserved.</div>
+            </div>
+
         </div>
     </footer>
 
@@ -123,6 +131,14 @@
             display: block;
         }
 
+        .strong {
+            font-weight: bold; 
+        }
+
+        .black {
+            color: #000;
+        }
+
         /* 커스텀 */
         .con_min_width {
             min-width: 1080px;
@@ -180,4 +196,23 @@
             padding-right: 0;
         }
 
+        footer .box-1 .menu-box > ul > li > a:hover {
+            text-decoration: underline;
+        }
+
+        footer .box-2 {
+            color: #888;
+            font-size: 12px;
+        }
+
+        footer .box-2 .txt_busi_tel {
+            color: #000;
+            padding: 0 6px;
+        }
+
+        footer .box-2 > .info_copyright {
+            margin-top: 6px;
+            font-weight: bold;
+            font-size: 11px;
+        }
         /* footer 끝 */
