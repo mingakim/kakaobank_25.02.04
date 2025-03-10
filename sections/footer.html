@@ -59,6 +59,47 @@
                 <div class="info_copyright">Copyright © KakaoBank Corp. All rights reserved.</div>
             </div>
 
+            <div class="box-3 flex">
+                <div class="license-1">
+                    <a href="#">
+                        <img src="/kakaoimage/webaccessibility.png" alt="">
+                        <span>웹 접근성 품질인증</span>
+                    </a>
+                </div>
+                <div class="license-2">
+                    <a href="#">
+                        <img src="/kakaoimage/web_trust_seal.png" alt="">
+                        <span>웹 트러스트 인증</span>
+                    </a>
+                </div>
+
+                <div class="flex-grow-1"></div>
+
+                <nav class="menu-box-2">
+                    <ul class="flex">
+                        <li>
+                            <a href="#" class="block">
+                                <span class="block ico_sns ico_sns_facebook"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block">
+                                <span class="block ico_sns ico_sns_instagram"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block">
+                                <span class="block ico_sns ico_sns_youtube"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block">
+                                <span class="block ico_sns ico_sns_brunch"></span>
+                            </a>
+                        </li>        
+                    </ul>
+                </nav>
+            </div>
         </div>
     </footer>
 
@@ -215,4 +256,63 @@
             font-weight: bold;
             font-size: 11px;
         }
+
+        footer .box-3 {
+            padding-top: 12px;
+            padding-bottom: 18px;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            gap: 20px;
+            align-items: center;            
+        }
+
+        footer .box-3 a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        footer .box-3 .license-1 img {
+            width: 46px;
+        }
+
+        footer .box-3 .license-2 img {
+            width: 42px;
+        }
+
+        footer .box-3 .menu-box-2 > ul {
+            margin-right: 30px;
+        }
+
+        footer .box-3 .menu-box-2 > ul > li {
+            margin-left: 10px;
+        }
+
+        footer .box-3 .menu-box-2 > ul > li > a {
+            width: 24px;
+            height: 24px;
+        }
+
+        footer .box-3 .menu-box-2 .ico_sns {
+            height: 100%;
+            background-image: url(/kakaoimage/ico_sns.png);
+        }
+
+        footer .box-3 .menu-box-2 .ico_sns_facebook {
+            background-position: 0 -90px;
+        }
+
+        footer .box-3 .menu-box-2 .ico_sns_instagram {
+            background-position: -191px -138px;
+        }
+
+        footer .box-3 .menu-box-2 .ico_sns_youtube {
+            background-position: -90px -90px;
+        }
+
+        footer .box-3 .menu-box-2 .ico_sns_brunch {
+            background-position: -217px -138px;
+        }
+
         /* footer 끝 */
